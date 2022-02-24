@@ -2,13 +2,10 @@
 
 This is ansible code to deploy Guardicore agent on Windows
 
-Tested on:
-Centra v40
-Windows 2012R2
-Ansible 2.9.6
+Tested on: Centra v40, Windows 2012R2, Ansible 2.9.6
 
 Prerequisites:
-Enable winrm from the POwershell on the Windows client and open firewall port 5986
+Enable winrm from the Powershell on the Windows client and open firewall port 5986
 
 # Execute the playbook:
 ansible-playbook -i inventory win_install.yaml
