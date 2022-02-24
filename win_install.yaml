@@ -16,4 +16,4 @@
         dest: "{{ mydest }}"
         validate_certs: no
     - name: install the agent
-      win_command: C:\Temp\windows_installer.exe windows_installer.exe /a 172.16.8.1 /p 2NmXnVPT /installation-profile monitoring
+      win_command: C:\Temp\windows_installer.exe windows_installer.exe /a 172.16.8.1 /p xxx /installation-profile monitoring
