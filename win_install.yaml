@@ -1,0 +1,19 @@
+---
+- name: Guardicore agent fetch and install
+  hosts: guardicore
+  vars:
+    myurl: "https://172.16.8.1/windows_installer.exe?profile=monitoring"
+    mypath: 'C:\Temp'
+    mydest: 'C:\Temp\windows_installer.exe'
+  tasks:
+    - name: Create destination directory
+      win_file:
+        path: "{{ mypath }}"
+        state: directory
+    - name: download the installer
+      win_get_url:
+        url: "{{ myurl }}"
+        dest: "{{ mydest }}"
+        validate_certs: no
+    - name: install the agent
+      win_command: C:\Temp\windows_installer.exe windows_installer.exe /a 172.16.8.1 /p 2NmXnVPT /installation-profile monitoring
